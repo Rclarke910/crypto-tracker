@@ -23,7 +23,7 @@ const filteredCoins = coins.filter(coin =>
   coin.name.toLowerCase().includes(search.toLowerCase()))
   return (
     <div>
-    <h1 className = 'app__header--title'>Today In Crypto</h1>
+    <h1 className = 'app__header--title'>Today In Crypto!</h1>
     <img src="src/Crypto-img.png" className='app__header--img'/>
     <form>
       <input type='textarea' className = 'app__searchbar--bar' placeholder="Search For A Coin" onChange = {handleChange}/>
