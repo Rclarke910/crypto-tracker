@@ -21,3 +21,25 @@ const handleChange = e => {
 }
 const filteredCoins = coins.filter(coin =>
   coin.name.toLowerCase().includes(search.toLowerCase()))
+  return (
+    <div>
+    <h1 className = 'app__header--title'>Today In Crypto</h1>
+    <img src="Crypto-img.png" className='app__header--img'/>
+    <form>
+      <input type='textarea' className = 'app__searchbar--bar' placeholder="Search For A Coin" onChange = {handleChange}/>
+      </form>
+        {filteredCoins.map(coin => {
+          return ( <Coin key={coin.id} 
+            name={coin.name} 
+            image={coin.image} 
+            symbol={coin.symbol} 
+            price={coin.current_price} 
+            volume={coin.total_volume} 
+            priceChange={coin.price_change_percentage_24h}
+            marketcap={coin.market_cap}/>);
+        })}
+    </div>
+  )
+}
+
+export default App
